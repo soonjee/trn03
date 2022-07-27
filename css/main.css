@@ -1,0 +1,141 @@
+html { font-size: 10px; }
+body { font-size: 1.6rem; }
+.Wrapper {
+}
+
+.container {
+    display: flex;
+    width: 120rem;
+    margin: 0 auto;
+
+}
+
+/* padding: 30px 0 30px 0;
+   축약형으로 안 쓴 이유는 나중을 대비해서~ */
+.TopBanner {
+    padding: 30px 0 30px 0;
+    background: #f8f8f8;
+}
+
+/* container를 따로 빼어 flex 하고,
+    .지정해서 다시 display: block; 하는 이유는
+    반응형 만들 때 쉽게 넣고빼고 할 수 있게 구상해놓고 한거임.
+*/
+.TopBanner .container {
+    position: relative;
+    display: block;
+}
+
+.TopBanner h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin:  0 0 1rem 0;
+}
+.TopBanner p {
+    font-size: 1.3rem;
+    /* transform: rotate(10deg); 왜 한거지*/
+}
+
+.TopBanner a {
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 2px 2rem 5px 2rem;
+   transform: translateY(-2px);
+   margin: 0 0 0 2rem;
+}
+
+.TopBanner i {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin: 0 auto;
+    }
+    
+    .TopBanner {
+        position: absolute;
+        top: 50%;
+        left: 1.5rem;
+        right: 1.5rem;
+        transform: translateY(-50%);
+
+        padding: 30px 0 30px 0;
+        background: #f8f8f8;
+    }
+    
+    .TopBanner .container {
+        position: static;
+        display: block;
+        padding: 0 2rem 0 2rem;
+    }
+    
+    .TopBanner h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin:  0 0 1rem 0;
+    }
+    .TopBanner p {
+        font-size: 1.3rem;
+        /* transform: rotate(10deg); 왜 한거지*/
+    }
+    
+    /* inline-block에서 block로 한 후 width값을 주어 more 박스를 내렸음 */
+    .TopBanner a {
+        display: block;
+        border: 1px solid #333;
+        width: 7rem;
+        padding: 2px 2rem 5px 2rem;
+       transform: translateY(0);
+       margin: 2rem 0 0 0;
+    }
+    
+    .TopBanner i {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        background: #333;
+        color: #fff;
+    }
+
+    .pop {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        width: 400px;
+        height: 500px;
+        background: #f00;
+    }
+
+    .pop button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .pop:nth-of-type(2) {
+        top :40%;
+        left: 40%;
+    }
+    .pop:nth-of-type(3) {
+        top :30%;
+        left: 30%;
+    }
+    .pop:nth-of-type(4) {
+        top :20%;
+        left: 20%;
+    }
+    .pop:nth-of-type(5) {
+        top :10%;
+        left: 10%;
+    }
+}
+
