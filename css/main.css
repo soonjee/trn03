@@ -1,26 +1,66 @@
-html { font-size: 10px; }
-body { font-size: 1.6rem; }
-.Wrapper {
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.Wapper {
+    min-width: 1900px;
+}
+
+.mc {
+    color: #008850;
 }
 
 .container {
     display: flex;
     width: 120rem;
     margin: 0 auto;
-
 }
 
-/* padding: 30px 0 30px 0;
-   축약형으로 안 쓴 이유는 나중을 대비해서~ */
+.btn {
+    display: inline-block;
+    border: 1px solid #008850;
+    padding: 10px 20px;
+    color: #008850;
+    font-size: 1.2rem;
+}
+
+.btn i {
+    font-size: 0.8rem;
+    margin: 0 0 0 1rem;
+}
+
+.sec {
+    padding: 10rem 0;
+}
+
+.sec h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 2rem 0;
+}
+.sec p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 5rem 0;
+}
+
+
+
 .TopBanner {
-    padding: 30px 0 30px 0;
     background: #f8f8f8;
+    padding: 3rem 0 3rem 0;
 }
 
-/* container를 따로 빼어 flex 하고,
-    .지정해서 다시 display: block; 하는 이유는
-    반응형 만들 때 쉽게 넣고빼고 할 수 있게 구상해놓고 한거임.
-*/
+.TopBanner.on {
+    display: none;
+}
+
 .TopBanner .container {
     position: relative;
     display: block;
@@ -29,19 +69,19 @@ body { font-size: 1.6rem; }
 .TopBanner h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin:  0 0 1rem 0;
+    margin: 0 0 1rem 0;
 }
+
 .TopBanner p {
     font-size: 1.3rem;
-    /* transform: rotate(10deg); 왜 한거지*/
 }
 
 .TopBanner a {
     display: inline-block;
     border: 1px solid #333;
     padding: 2px 2rem 5px 2rem;
-   transform: translateY(-2px);
-   margin: 0 0 0 2rem;
+    transform: translateY(-2px);
+    margin: 0 0 0 2rem;
 }
 
 .TopBanner i {
@@ -50,92 +90,719 @@ body { font-size: 1.6rem; }
     right: 0;
 }
 
-@media (max-width: 1000px) {
+.Header {
+    line-height: 10rem;
+}
+
+.Header h1 {
+    font-size: 0;
+}
+
+.Gnb {
+    margin: 0 0 0 auto;
+}
+
+.Gnb a {
+    display: block;
+}
+
+.Gnb a::first-letter {
+    color: #f00;
+}
+
+.Gnb>ul {
+    display: flex;
+    gap: 3rem;
+}
+
+.Gnb>ul>li {
+    position: relative;
+}
+
+.Gnb>ul>li~li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -1.5rem;
+    width: 1px;
+    height: 1.2rem;
+    background: #ddd;
+    transform: translateY(-50%);
+}
+
+#searchForm {
+    margin: 0 0 0 4rem;
+}
+
+#searchForm input[name='search'] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+
+#searchForm input[name='search'] {
+    color: #f00;
+}
+
+#searchForm input[name='search']::placeholder {
+    color: #ddd;
+}
+
+#searchForm input[name='search']:focus::placeholder {
+    color: transparent;
+}
+
+#searchForm button {
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+}
+
+h5 {
+    display: flex;
+    align-items: center;
+}
+h5::before {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: #f00;
+    margin: 0 0 0 20px;
+}
+
+h5::after {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: #f00;
+    margin: 0 0 0 20px;
+}
+
+.MainVisual .itm01 {
+    background: url(../img/mainvisual01.jpg)no-repeat center center/cover;
+    height: 500px;
+}
+.MainVisual .itm02 {
+    background: url(../img/mainvisual02.jpg)no-repeat center center/cover;
+    height: 500px;
+}
+.MainVisual .itm03 {
+    background: url(../img/mainvisual03.jpg)no-repeat center center/cover;
+    height: 500px;
+}
+
+.MainContent {
+    text-align:  center;
+}
+
+.MainContent .box {
+    overflow: hidden;
+    margin: 0 0 4rem 0;
+}
+
+.MainContent figure .box img {
+transition: 0.5s;
+}
+
+.MainContent figure:hover .box img {
+transform: scale(1.2);
+}
+
+.MainContent .tit {
+    position: relative;
+    font-size: 2.1rem;
+    font-weight: 500;
+    margin: 0 0 3rem 0;
+    text-align: center;
+}
+
+.MainContent .tit::after {
+    content: "";
+    position: absolute;
+    top: -6rem;
+    left: calc(50% - 1px);
+    /* left:50% 도 되지만 1px 범위 맞추기 위해 calc으로 정확히 계산. */
+    width: 2px;
+    height: 4rem;
+    background: #008850;
+}
+
+.MainContent .dec {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0 0 4rem 0;
+}
+
+.Product {
+    text-align: center;
+    background: linear-gradient(#008850 50%, transparent 50%);
+    color: #fff;
+}
+ 
+.Product .ProductSlider {
+    width: 123rem;
+    margin: 0 auto;
+}
+
+.Product .ProductSlider figure {
+    padding: 0 1.5rem;
+}
+
+.Product .ProductSlider figure img {
+    margin: 0 0 3rem 0;
+}
+
+.Product .ProductSlider figure .dec {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.Footer .container {
+    justify-content: space-between;
+}
+
+.Footer .top {
+    border-top: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd; 
+    line-height: 7rem;
+}
+
+.Footer .top ul li {
+    display: inline-block;
+}
+
+.Footer .customer li~li::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #ddd;
+    margin: 0 1.5rem;
+    transform: translate(-2px, -4px);
+}
+
+.Footer .top span {
+    font-size: 1.8rem;
+}
+
+
+.Footer .bottom {
+    padding: 3rem 0;
+    line-height: 1.25;
+}
+
+.Footer .pop li {
+    position: relative;
+    padding: 0 3rem 0 0;
+}
+
+.Footer .pop li::before {
+    content: "";
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translate(1px, -50%);
+    width: 2px;
+    height: 1rem;
+    background: #008850;
+}
+.Footer .pop li.on::before {
+   display: none;
+}
+
+
+.Footer .pop li::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1rem;
+    height: 2px;
+    background: #008850;
+}
+
+.Footer .bottom .sns i {
+    padding: 1rem;
+    color: #ddd;
+    background: #333;
+    border-radius: 50%;
+}
+
+
+.Footer .pop {
+    position: absolute;
+    top: calc(-7rem - 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f7f7f7;
+    padding: 0 2rem;
+    border: 1px solid #ddd;
+}
+
+.Footer .pop.on {
+    display: flex;
+}
+
+.Footer .pop i {
+    align-self: center;
+}
+
+.mopen {
+    display: none;
+}
+
+.mbr {
+    display: none;
+}
+
+
+.xxxx{}
+/*
+
+
+
+
+
+
+
+
+
+
+반응형 시작
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+@media (max-width: 768px) {
+    html {
+        font-size: 5px;
+    }
+    
+    body {
+        font-size: 1.6rem;
+        letter-spacing: -0.025em;
+    }
+
+    .Wapper {
+        min-width: none;
+        overflow-x: hidden;
+    }
+    
+    .mc {
+        color: #008850;
+    }
+    
     .container {
         display: flex;
-        flex-direction: column;
-        width: auto;
+        width: 120rem;
         margin: 0 auto;
     }
     
+    .btn {
+        display: inline-block;
+        border: 1px solid #008850;
+        padding: 10px 20px;
+        color: #008850;
+        font-size: 1.2rem;
+    }
+    
+    .btn i {
+        font-size: 0.8rem;
+        margin: 0 0 0 1rem;
+    }
+    
+    .sec {
+        padding: 10rem 0;
+    }
+    
+    .sec h2 {
+        font-size: 4rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 0 2rem 0;
+    }
+    .sec p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-align: center;
+        margin: 0 0 5rem 0;
+    }
+    
+    
+    
     .TopBanner {
-        position: absolute;
-        top: 50%;
-        left: 1.5rem;
-        right: 1.5rem;
-        transform: translateY(-50%);
-
-        padding: 30px 0 30px 0;
         background: #f8f8f8;
+        padding: 3rem 0 3rem 0;
+    }
+    
+    .TopBanner.on {
+        display: none;
     }
     
     .TopBanner .container {
-        position: static;
-        display: block;
-        padding: 0 2rem 0 2rem;
+        position: relative;
+        display: flex;
     }
     
     .TopBanner h2 {
         font-size: 2.5rem;
         font-weight: 700;
-        margin:  0 0 1rem 0;
-    }
-    .TopBanner p {
-        font-size: 1.3rem;
-        /* transform: rotate(10deg); 왜 한거지*/
+        margin: 0 0 1rem 0;
     }
     
-    /* inline-block에서 block로 한 후 width값을 주어 more 박스를 내렸음 */
+    .TopBanner p {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.3rem;
+    }
+    
     .TopBanner a {
         display: block;
         border: 1px solid #333;
-        width: 7rem;
         padding: 2px 2rem 5px 2rem;
-       transform: translateY(0);
-       margin: 2rem 0 0 0;
+        transform: translateY(-2px);
+        margin: 2rem 0 0 0;
     }
     
     .TopBanner i {
         position: absolute;
         top: 0;
         right: 0;
-        padding: 5px;
-        background: #333;
-        color: #fff;
     }
-
-    .pop {
+    
+    .Header {
+        line-height: 10rem;
+    }
+    
+    .Header h1 {
+        font-size: 0;
+    }
+    
+    .Gnb {
+        margin: 0 0 0 auto;
+    }
+    
+    .Gnb a {
+        display: block;
+    }
+    
+    .Gnb a::first-letter {
+        color: #f00;
+    }
+    
+    .Gnb>ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        font-size: 2rem;
+        line-height: 2;
+        padding: 2ren 0 0 0;
+    }
+    
+    .Gnb>ul>li {
+        position: relative;
+    }
+    
+    .Gnb>ul>li~li::before {
+        content: '';
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-
-        width: 400px;
-        height: 500px;
+        left: -1.5rem;
+        width: 1px;
+        height: 1.2rem;
+        background: #ddd;
+        transform: translateY(-50%);
+    }
+    
+    #searchForm {
+        margin: 0 0 0 4rem;
+    }
+    
+    #searchForm input[name='search'] {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #333;
+    }
+    
+    #searchForm input[name='search'] {
+        color: #f00;
+    }
+    
+    #searchForm input[name='search']::placeholder {
+        color: #ddd;
+    }
+    
+    #searchForm input[name='search']:focus::placeholder {
+        color: transparent;
+    }
+    
+    #searchForm button {
+        outline: none;
+        border: none;
+        background: transparent;
+        font-size: 2rem;
+    }
+    
+    h5 {
+        display: flex;
+        align-items: center;
+    }
+    h5::before {
+        content: "";
+        display: block;
+        flex: 1;
+        height: 1px;
         background: #f00;
+        margin: 0 0 0 20px;
     }
-
-    .pop button {
+    
+    h5::after {
+        content: "";
+        display: block;
+        flex: 1;
+        height: 1px;
+        background: #f00;
+        margin: 0 0 0 20px;
+    }
+    
+    .MainVisual .itm01 {
+        background: url(../img/mainvisual01.jpg)no-repeat center center/cover;
+        height: 500px;
+    }
+    .MainVisual .itm02 {
+        background: url(../img/mainvisual02.jpg)no-repeat center center/cover;
+        height: 500px;
+    }
+    .MainVisual .itm03 {
+        background: url(../img/mainvisual03.jpg)no-repeat center center/cover;
+        height: 500px;
+    }
+    
+    .MainContent {
+        text-align:  center;
+    }
+    
+    .MainContent .box {
+        overflow: hidden;
+        margin: 0 0 4rem 0;
+    }
+    
+    .MainContent figure .box img {
+    transition: 0.5s;
+    }
+    
+    .MainContent figure:hover .box img {
+    transform: scale(1.2);
+    }
+    
+    .MainContent .tit {
+        position: relative;
+        font-size: 2.1rem;
+        font-weight: 500;
+        margin: 0 0 3rem 0;
+        text-align: center;
+    }
+    
+    .MainContent .tit::after {
+        content: "";
         position: absolute;
-        bottom: 10px;
-        right: 10px;
+        top: -6rem;
+        left: calc(50% - 1px);
+        /* left:50% 도 되지만 1px 범위 맞추기 위해 calc으로 정확히 계산. */
+        width: 2px;
+        height: 4rem;
+        background: #008850;
+    }
+    
+    .MainContent .dec {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: 0 0 4rem 0;
+    }
+    
+    .Product {
+        text-align: center;
+        background: linear-gradient(#008850 50%, transparent 50%);
+        color: #fff;
+    }
+     
+    .Product .ProductSlider {
+        width: 123rem;
+        margin: 0 auto;
+    }
+    
+    .Product .ProductSlider figure {
+        padding: 0 1.5rem;
+    }
+    
+    .Product .ProductSlider figure img {
+        margin: 0 0 3rem 0;
+    }
+    
+    .Product .ProductSlider figure .dec {
+        font-size: 1.5rem;
+        color: #333;
+    }
+    
+    .Footer .container {
+        justify-content: space-between;
+    }
+    
+    .Footer .top {
+        border-top: 1px solid #ddd; 
+        border-bottom: 1px solid #ddd; 
+        line-height: 7rem;
+    }
+    
+    .Footer .top ul li {
+        display: inline-block;
+    }
+    
+    .Footer .customer li~li::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background: #ddd;
+        margin: 0 1.5rem;
+        transform: translate(-2px, -4px);
+    }
+    
+    .Footer .top span {
+        font-size: 1.8rem;
+    }
+    
+    
+    .Footer .bottom {
+        padding: 3rem 0;
+        line-height: 1.25;
+    }
+    
+    .Footer .pop li {
+        position: relative;
+        padding: 0 3rem 0 0;
+    }
+    
+    .Footer .pop li::before {
+        content: "";
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translate(1px, -50%);
+        width: 2px;
+        height: 1rem;
+        background: #008850;
+    }
+    .Footer .pop li.on::before {
+       display: none;
+    }
+    
+    
+    .Footer .pop li::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 1rem;
+        height: 2px;
+        background: #008850;
+    }
+    
+    .Footer .bottom .sns i {
+        padding: 1rem;
+        color: #ddd;
+        background: #333;
+        border-radius: 50%;
+    }
+    
+    
+    .Footer .pop {
+        position: absolute;
+        top: calc(-7rem - 2px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #f7f7f7;
+        padding: 0 2rem;
+        border: 1px solid #ddd;
+    }
+    
+    .Footer .pop.on {
+        display: flex;
+    }
+    
+    .Footer .pop i {
+        align-self: center;
     }
 
-    .pop:nth-of-type(2) {
-        top :40%;
-        left: 40%;
+    .mopen {
+        display: block;
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        height: 30px;
+        background: #ddd;
+        font-size: 0;
+        line-height: 1;
+        z-index: 999;
     }
-    .pop:nth-of-type(3) {
-        top :30%;
-        left: 30%;
+
+    .mopen::before,
+    .mopen::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        height: 2px;
+        background: #333;
     }
-    .pop:nth-of-type(4) {
-        top :20%;
-        left: 20%;
+
+    .mopen::before {
+        top: 5px;
     }
-    .pop:nth-of-type(5) {
-        top :10%;
-        left: 10%;
+
+    .mopen button {
+        border: none;
+        outline: none;
+        background: transparent;
     }
+
+
+    .mopen button::before,
+    .mopen button::after {
+        content: "";
+        position: absolute;
+        left: 3px;
+        right: 3px;
+        height: 2px;
+        background: #333;
+        top: calc(50% - 1px);
+    }
+
+    .mopen.on button::before {
+        transform: rotate(45deg);
+    }
+    .mopen.on button::after {
+        transform: rotate(-45deg);
+    }
+
+
+
 }
-
